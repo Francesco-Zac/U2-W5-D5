@@ -86,7 +86,6 @@ header {
 .hero .container {
   display: flex;
   padding-top: 60px;
-  position: relative;
   z-index: 2;
 }
 
@@ -129,6 +128,12 @@ header {
   top: 0;
   width: 50%;
   height: 100%;
+}
+
+.mArt img {
+  position: absolute;
+  right: 0;
+  top: 50px;
 }
 
 /* Trending Section */
@@ -360,6 +365,7 @@ header {
   .hero .container {
     padding: 40px 30px 0;
     flex-direction: column;
+    position: relative;
   }
 
   .hero .info {
@@ -375,11 +381,10 @@ header {
     margin-bottom: 30px;
   }
 
-  .mArt {
-    position: relative;
+  .mArt img {
+    position: absolute;
+    top: 0;
     width: 100%;
-    height: 200px;
-    margin-top: 30px;
   }
 
   .trending,
@@ -412,6 +417,10 @@ header {
     flex-direction: column;
   }
 
+  .hero h1 {
+    font-size: 50px;
+  }
+
   .trending-grid {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -425,5 +434,9 @@ header {
     height: 2rem;
     font-size: 15px;
     padding: 0px;
+  }
+
+  .mArt {
+    display: none;
   }
 }
