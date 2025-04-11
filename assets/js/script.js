@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroHeight = hero.offsetHeight;
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > heroHeight) {
+    if (window.scrollY > 20) {
       header.style.position = "fixed";
       header.style.backgroundColor = "#ffffff";
       header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
