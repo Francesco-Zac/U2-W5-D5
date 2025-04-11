@@ -32,3 +32,61 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+window.onload = () => {
+  const style = document.createElement("style");
+  style.textContent = `
+    .m-letter {
+      /* Transizione solo per l'apparizione, non per la scomparsa */
+      transition: opacity 0s ease-out 0s, opacity 0.5s ease-in 0s;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .m-letter.hidden {
+      /* Scomparsa immediata (0s) */
+      opacity: 0;
+      transition: opacity 0s;
+    }
+  `;
+  document.head.appendChild(style);
+
+  function isLeaf(group) {
+    if (!group.querySelector("path")) return false;
+
+    const innerGroups = group.querySelectorAll(":scope > g");
+    for (let g of innerGroups) {
+      if (g.querySelector("path")) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  const mGroups = document.querySelectorAll(".m-pattern svg g");
+  console.log("Gruppi <g> trovati:", mGroups.length);
+
+  let count = 0;
+
+  mGroups.forEach((group) => {
+    if (isLeaf(group)) {
+      if (!group.classList.contains("m-letter")) {
+        group.classList.add("m-letter");
+      }
+
+      group.addEventListener("mouseenter", (e) => {
+        e.stopPropagation();
+        group.classList.add("hidden");
+      });
+
+      group.addEventListener("mouseleave", (e) => {
+        e.stopPropagation();
+        group.classList.remove("hidden");
+      });
+
+      count++;
+    }
+  });
+
+  console.log("Elementi .m-letter dopo assegnazione foglia:", count);
+};
