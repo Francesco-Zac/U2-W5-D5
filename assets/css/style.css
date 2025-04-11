@@ -329,6 +329,10 @@ span img {
   margin-top: 20px;
 }
 
+.info {
+  padding-left: 8rem;
+}
+
 .footer p a {
   text-decoration: none;
   color: #292929;
@@ -377,7 +381,7 @@ span img {
     border-bottom: 1px solid #000;
   }
 
-  .logo img {
+  .hero h2 .logo img {
     height: 25px;
   }
 
