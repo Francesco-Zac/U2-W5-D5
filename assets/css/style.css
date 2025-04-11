@@ -44,6 +44,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 80px;
+  padding-left: 8rem;
   border-bottom: 1px solid rgba(41, 41, 41, 0.2);
 }
 
@@ -153,6 +154,8 @@ header {
 }
 /* Trending Section */
 .trending {
+  margin-left: 3rem;
+  margin-right: 3rem;
   padding: 40px 80px;
   border-bottom: 1px solid #f2f2f2;
 }
@@ -238,6 +241,7 @@ header {
 /* Featured Articles Section */
 .featured {
   display: flex;
+  margin-left: 3rem;
   padding: 40px 80px;
 }
 
@@ -344,8 +348,8 @@ header {
 }
 
 .topics-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   margin-bottom: 30px;
 }
@@ -372,7 +376,7 @@ header {
 
 /* Media Queries */
 
-@media screen and(max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   header {
     padding: 15px 30px;
   }
@@ -418,13 +422,15 @@ header {
 
   .articles {
     width: 100%;
+    order: 2;
   }
 
   .sidebar {
     width: 100%;
     padding-left: 0;
-    margin-top: 40px;
-    order: -1;
+    margin-top: 0;
+    margin-bottom: 40px;
+    order: 1;
   }
 }
 
@@ -433,6 +439,13 @@ header {
     flex-direction: column;
   }
 
+  .hero .container {
+    margin: 0;
+  }
+
+  .featured {
+    margin: 0;
+  }
   .hero h1 {
     font-size: 50px;
   }
