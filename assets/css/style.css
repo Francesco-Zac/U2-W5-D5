@@ -340,10 +340,8 @@ span img {
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  /* FONT IMPORTS */
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=GT+Super+Display:wght@700&display=swap");
 
-  /* BASE STYLES */
   * {
     box-sizing: border-box;
     margin: 0;
@@ -365,7 +363,6 @@ span img {
     list-style: none;
   }
 
-  /* HERO SECTION */
   .hero {
     background-color: #ffc017;
     border-bottom: 1px solid #000;
